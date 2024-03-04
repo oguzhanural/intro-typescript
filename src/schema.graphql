@@ -1,0 +1,13 @@
+
+ "Playlists hand-picked to be featured to all users."
+type Query {
+    featuredPlaylists: [Playlist!]!
+}
+
+"A curated collection of tracks designed for a specific activity or mood."
+type Playlist {
+    id: ID!
+    name: String!
+    description: String
+
+}
