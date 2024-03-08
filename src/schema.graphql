@@ -1,0 +1,26 @@
+
+ "Playlists hand-picked to be featured to all users."
+type Query {
+    featuredPlaylists: [Playlist!]!
+    playlist(id: ID!): Playlist
+}
+
+"A curated collection of tracks designed for a specific activity or mood."
+type Playlist {
+    id: ID!
+    name: String!
+    description: String
+    #"The tracks of the playlist."
+    tracks: [Track!]!
+
+}
+"A single audio file, usually a song."
+type Track {
+    id: ID!
+    name: String!
+    "The track length in milliseconds."
+    durationMs: Int!
+    "The URI for the track, usually a Spotify link."
+    uri: String!
+    explicit: Boolean!
+}
