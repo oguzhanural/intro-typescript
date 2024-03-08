@@ -14,7 +14,7 @@ export const resolvers: Resolvers = {
                 description,
                 tracks: { items = [] } = {},
             } = await dataSources.spotifyAPI.getPlaylist(id);
-
+            // error Property 'duration_ms' does not exist on type 'Track'.
             const newTrackItems = items.map(( { track }: {track: Track}) => {
                 const { id, name, duration_ms, uri, explicit} = track ;
                 return { id, name, durationMs: duration_ms, uri, explicit }
